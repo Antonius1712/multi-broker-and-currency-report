@@ -53,9 +53,10 @@ class SendReportInternal extends Command
         //! GET DATA LOG.
         //* FILTERED BY LAST MONTH, AND YEAR OF LAST MONTH. 
         $this->DataLogSendingcollectionInternalThisMonth = LogSendingCollectionInternal::
-            whereYear('created_at', date('Y', strtotime( now()->firstOfMonth()->subDays(1) )))
-            ->whereMonth('created_at', date('m', strtotime( now()->firstOfMonth()->subDays(1) )))
-            ->where('email_sent', null)
+            // whereYear('created_at', date('Y', strtotime( now()->firstOfMonth()->subDays(1) )))
+            // ->whereMonth('created_at', date('m', strtotime( now()->firstOfMonth()->subDays(1) )))
+            // ->
+            where('email_sent', null)
         ->get();
 
         $this->CollectionEmailInternal = CollectionEmailInternal::pluck('email');

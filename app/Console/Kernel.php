@@ -27,6 +27,7 @@ class Kernel extends ConsoleKernel
         // generate tanggal 4. di bulan ini jam 1 pagi.
         // sending report broker tanggal 4, bulan ini, jam 5 pagi.
         // sending report internal tanggal 5, bulan ini, jam 5 pagi.
+        // DI LIVE, REPORTGENERATOR (181), SEA (24)
     }
 
     /**
