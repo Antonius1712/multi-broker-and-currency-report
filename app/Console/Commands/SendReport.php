@@ -93,7 +93,7 @@ class SendReport extends Command
                 //         $mail->attach($destination_path);
                 //         // $mail->to($val->collection_email->pic_emailed_by_finance);
                 //         // $mail->cc('it-dba07@lippoinsurance.com');
-                //         $mail->bcc('it-dba01@lippoinsurance.com');
+                //         $mail->bcc(['it-dba01@lippoinsurance.com', 'it-dba07@lippoinsurance.com']);
                 //         $mail->subject('SOA Lippo General Insurance  Broker '.$val->collection_email->broker_name);
                 //     }
                 // ); 

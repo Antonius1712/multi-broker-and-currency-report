@@ -93,8 +93,8 @@ class SendReportInternal extends Command
                     $mail->from(config('app.NO_REPLY_EMAIL'), config('app.name'));
                     $mail->to($val->email);
                     // $mail->cc(['it-dba07@lippoinsurance.com']);
-                    $mail->cc($this->CC);
-                    $mail->bcc('it-dba01@lippoinsurance.com');
+                    // $mail->cc($this->CC);
+                    $mail->bcc(['it-dba01@lippoinsurance.com', 'it-dba07@lippoinsurance.com']);
                     $mail->attach($destination_path);
                     // $mail->to($val->collection_email->pic_emailed_by_finance);
                     // $mail->cc('it-dba07@lippoinsurance.com');
