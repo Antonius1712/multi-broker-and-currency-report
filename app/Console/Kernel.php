@@ -17,7 +17,7 @@ class Kernel extends ConsoleKernel
     {
         // TESTING.
         $schedule->command('generate:monthly-report')->monthlyOn(3, '14:05');
-        $schedule->command('send:monthly-report-broker')->monthlyOn(3, '14:35');
+        // $schedule->command('send:monthly-report-broker')->monthlyOn(3, '14:35');
         $schedule->command('send:monthly-report-internal')->monthlyOn(3, '14:35');
 
         // $schedule->command('generate:monthly-report')->monthlyOn(4, '01:00');

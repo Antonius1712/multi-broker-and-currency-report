@@ -85,18 +85,20 @@ class SendReport extends Command
                     'date' => $this->date
                 ];
     
-                \Mail::send($emailTemplate, 
-                    $PARAM,
-                    function ($mail) use ($val, $destination_path) {
-                        $mail->from(config('app.NO_REPLY_EMAIL'), config('app.name'));
-                        $mail->to($this->CollectionEmailInternal);
-                        $mail->attach($destination_path);
-                        // $mail->to($val->collection_email->pic_emailed_by_finance);
-                        // $mail->cc('it-dba07@lippoinsurance.com');
-                        $mail->bcc('it-dba01@lippoinsurance.com');
-                        $mail->subject('SOA Lippo General Insurance  Broker '.$val->collection_email->broker_name);
-                    }
-                ); 
+                // \Mail::send($emailTemplate, 
+                //     $PARAM,
+                //     function ($mail) use ($val, $destination_path) {
+                //         $mail->from(config('app.NO_REPLY_EMAIL'), config('app.name'));
+                //         $mail->to($this->CollectionEmailInternal);
+                //         $mail->attach($destination_path);
+                //         // $mail->to($val->collection_email->pic_emailed_by_finance);
+                //         // $mail->cc('it-dba07@lippoinsurance.com');
+                //         $mail->bcc('it-dba01@lippoinsurance.com');
+                //         $mail->subject('SOA Lippo General Insurance  Broker '.$val->collection_email->broker_name);
+                //     }
+                // ); 
+
+                echo 'email sent.. kirim email buat broker di hide.';
     
                 $val->email_sent = 'yes';
                 $val->save();
