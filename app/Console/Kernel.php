@@ -16,9 +16,9 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // TESTING.
-        $schedule->command('generate:monthly-report')->monthlyOn(3, '14:05');
+        $schedule->command('generate:monthly-report')->monthlyOn(3, '15:55');
         // $schedule->command('send:monthly-report-broker')->monthlyOn(3, '14:35');
-        $schedule->command('send:monthly-report-internal')->monthlyOn(3, '14:35');
+        $schedule->command('send:monthly-report-internal')->monthlyOn(3, '16:15');
 
         // $schedule->command('generate:monthly-report')->monthlyOn(4, '01:00');
         // $schedule->command('send:monthly-report-broker')->monthlyOn(4, '05:00');
