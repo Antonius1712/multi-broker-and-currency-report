@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Exports\MonthlyReportExport;
+use App\Models\CollectionEmailInternal;
+use App\Models\LogSendingCollectionInternal;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
@@ -30,6 +32,35 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        // $collection_email_internal = CollectionEmailInternal::all();
+        // foreach( $collection_email_internal as $val ){
+        //     $DataLogSendingcollectionThisMonthToInternal = LogSendingCollectionInternal::
+        //         whereYear('created_at', date('Y', strtotime( now() )))
+        //         ->whereMonth('created_at', date('m', strtotime( now() )))
+        //         ->where('email', $val)
+        //         ->where('email_sent', null)
+        //     ->get();
+
+        //     if( count( $DataLogSendingcollectionThisMonthToInternal ) == 0 ){
+        //         $date = $this->date;
+
+        //         $LogSendingCollectionInternal = new LogSendingCollectionInternal();
+        //         $LogSendingCollectionInternal->email = $val->email;
+        //         $LogSendingCollectionInternal->email_subject = config('email.MAIL_SUBJECT_BROKER');
+        //         $LogSendingCollectionInternal->email_body = view('email.sent-monthly-report-internal', compact('date'))->render();
+        //         $LogSendingCollectionInternal->year = date('Y', strtotime( now() ));
+        //         $LogSendingCollectionInternal->month = date('m', strtotime( now() ));
+        //         $LogSendingCollectionInternal->date = date('D', strtotime( now() ));
+        //         $LogSendingCollectionInternal->day = date('d', strtotime( now() ));
+        //         $LogSendingCollectionInternal->time = date('H:i:s', strtotime( now() ));
+        //         $LogSendingCollectionInternal->save();
+        //     }
+        // }
+        // dd( $collection_email_internal ) ;
+
+        return 'masuk';
+
         ini_set('memory_limit', "4096M");
         ini_set('max_execution_time', 0);
         try {
