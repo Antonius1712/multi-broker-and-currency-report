@@ -39,9 +39,16 @@ class SendReport extends Command
         $this->LC = "\033[1;36m"; # Light Cyan
         $this->NC = "\033[0m"; # No Color
         $this->YELLOW = "‘\033[1;33m";
-
         $this->date = date('m/d/Y', strtotime(now()->firstOfMonth()->subDays(1)));
+    }
 
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
         //! GET DATA LOG.
         //* FILTERED BY LAST MONTH, AND YEAR OF LAST MONTH. 
         $this->DataLogSendingcollectionThisMonth = LogSendingCollection::
@@ -54,16 +61,7 @@ class SendReport extends Command
 
         $this->CollectionEmailInternal = CollectionEmailInternal::pluck('email');
 
-        // dd($this->CollectionEmailInternal);
-    }
 
-    /**
-     * Execute the console command.
-     *
-     * @return int
-     */
-    public function handle()
-    {
         //! DATA LOG IS ON CONSTRUCT.
         if( count( $this->DataLogSendingcollectionThisMonth ) > 0 ){
             $this->info($this->LC."Sending Email...");
@@ -91,8 +89,8 @@ class SendReport extends Command
                 //         $mail->from(config('app.NO_REPLY_EMAIL'), config('app.name'));
                 //         $mail->to($this->CollectionEmailInternal);
                 //         $mail->attach($destination_path);
-                //         // $mail->to($val->collection_email->pic_emailed_by_finance);
-                //         // $mail->cc('it-dba07@lippoinsurance.com');
+                        // $mail->to($val->collection_email->pic_emailed_by_finance);
+                        // $mail->cc('it-dba07@lippoinsurance.com');
                 //         $mail->bcc(['it-dba01@lippoinsurance.com', 'it-dba07@lippoinsurance.com']);
                 //         $mail->subject('SOA Lippo General Insurance  Broker '.$val->collection_email->broker_name);
                 //     }

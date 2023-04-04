@@ -39,9 +39,7 @@ class SendReportInternal extends Command
         $this->LC = "\033[1;36m"; # Light Cyan
         $this->NC = "\033[0m"; # No Color
         $this->YELLOW = "‘\033[1;33m";
-
         $this->date = date('m/d/Y', strtotime(now()->firstOfMonth()->subDays(1)));
-
         $this->CC = [
             'rinto@lippoinsurance.com', 
             'finance07.ho@lippoinsurance.com',
@@ -49,7 +47,15 @@ class SendReportInternal extends Command
             'finance02.karawaci@lippoinsurance.com',
             'yekti@lippoinsurance.com'
         ];
+    }
 
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle()
+    {
         //! GET DATA LOG.
         //* FILTERED BY LAST MONTH, AND YEAR OF LAST MONTH. 
         $this->DataLogSendingcollectionInternalThisMonth = LogSendingCollectionInternal::
@@ -60,15 +66,7 @@ class SendReportInternal extends Command
         ->get();
 
         $this->CollectionEmailInternal = CollectionEmailInternal::pluck('email');
-    }
-
-    /**
-     * Execute the console command.
-     *
-     * @return int
-     */
-    public function handle()
-    {
+        
         //! DATA LOG IS ON CONSTRUCT.
         if( count( $this->DataLogSendingcollectionInternalThisMonth ) > 0 ){
             $this->info($this->LC."Sending Email...");
