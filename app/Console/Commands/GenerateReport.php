@@ -60,12 +60,6 @@ class GenerateReport extends Command
         ini_set('memory_limit', "4096M");
         ini_set('max_execution_time', 0);
         
-        // $this->createZip(config('filesystems')['disks']['monthly_report']['root']);
-
-        // dd('s');
-
-        // dd(config('filesystems')['disks']['monthly_report']['root']);
-
         $this->info($this->GREEN."Starting Process... \n");
 
         try {
