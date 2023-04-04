@@ -279,7 +279,7 @@ class GenerateReport extends Command
     public function createZip($filePath)
     {
         $ZipRoot = config('filesystems')['disks']['monthly_report_zipped']['root'];
-        $ZippedPath = $ZipRoot.'/Monthly_Report_Broker_'.date('Y', strtotime(now())).'_'.date('M', strtotime(now())).'.zip';
+        $ZippedPath = $ZipRoot.'/Monthly_Report_Broker_'.date('Y', strtotime(now())).'_'.date('M', strtotime(now()->firstOfMonth()->subDays(1))).'.zip';
 
 
         // Get real path for our folder
