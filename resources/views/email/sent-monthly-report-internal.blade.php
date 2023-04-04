@@ -14,7 +14,7 @@
 </p> 
 
 <p>
-    Untuk menghindari pertanggungan polis menjadi tidak berlaku, sangat disarankan agar premi dibayar sebelum jatuh tempo sesuai dengan ketentuan DPC atau WPC Polis. 
+    Untuk menghindari pertanggungan polis menjadi tidak berlaku, dimohon agar premi dibayar sebelum jatuh tempo sesuai dengan ketentuan DPC atau WPC Polis. 
 </p>
 
 <p>
