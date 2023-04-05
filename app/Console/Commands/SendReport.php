@@ -87,10 +87,12 @@ class SendReport extends Command
                     $PARAM,
                     function ($mail) use ($val, $destination_path) {
                         $mail->from(config('app.NO_REPLY_EMAIL'), config('app.name'));
-                        // $mail->to($this->CollectionEmailInternal);
+                        $mail->cc($this->CollectionEmailInternal);
                         $mail->attach($destination_path);
-                        $mail->to($val->collection_email->pic_emailed_by_finance);
-                        $mail->bcc(['it-dba01@lippoinsurance.com', 'it-dba07@lippoinsurance.com']);
+                        // $mail->bcc(['it-dba01@lippoinsurance.com', 'it-dba07@lippoinsurance.com']);
+                        // $mail->to($val->collection_email->pic_emailed_by_finance);
+                        $mail->to('it-dba01@lippoinsurance.com');
+                        $mail->bcc('it-dba07@lippoinsurance.com');
                         $mail->subject('SOA Lippo General Insurance Broker '.$val->collection_email->broker_name);
                     }
                 ); 
