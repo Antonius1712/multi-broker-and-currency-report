@@ -90,13 +90,10 @@ class SendReport extends Command
                         // $mail->to($this->CollectionEmailInternal);
                         $mail->attach($destination_path);
                         $mail->to($val->collection_email->pic_emailed_by_finance);
-                        $mail->cc('it-dba07@lippoinsurance.com');
                         $mail->bcc(['it-dba01@lippoinsurance.com', 'it-dba07@lippoinsurance.com']);
-                        $mail->subject('SOA Lippo General Insurance  Broker '.$val->collection_email->broker_name);
+                        $mail->subject('SOA Lippo General Insurance Broker '.$val->collection_email->broker_name);
                     }
                 ); 
-
-                echo 'email sent.. kirim email buat broker di hide.';
     
                 $val->email_sent = 'yes';
                 $val->save();
