@@ -75,6 +75,14 @@ class SendReport extends Command
 
         $PARAM = '';
         foreach( $this->DataLogSendingcollectionThisMonth as $val ){
+
+            $EmailPIC = explode(';', str_replace(' ', '', $val->collection_email->pic_emailed_by_finance));
+            $EmailPIC = array_filter($EmailPIC, function($val){
+                return !is_null($val) && $val !== '';
+            });
+
+            // dd($EmailPIC);
+
             //! HANYA KIRIM KE BROKER DENGAN EMAIL YANG ADA DI COLLECTION EMAIL.
             if( isset($val->collection_email) ){
 
@@ -88,11 +96,11 @@ class SendReport extends Command
     
                 \Mail::send($emailTemplate, 
                     $PARAM,
-                    function ($mail) use ($val, $destination_path) {
+                    function ($mail) use ($val, $destination_path, $EmailPIC) {
                         $mail->from(config('app.NO_REPLY_EMAIL'), config('app.name'));
                         $mail->attach($destination_path);
 
-                        $mail->to($val->collection_email->pic_emailed_by_finance);
+                        $mail->to($EmailPIC);
                         $mail->cc($this->CollectionEmailInternal);
                         $mail->bcc(['it-dba01@lippoinsurance.com', 'it-dba07@lippoinsurance.com']);
 
