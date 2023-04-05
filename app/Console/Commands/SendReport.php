@@ -91,11 +91,13 @@ class SendReport extends Command
                     function ($mail) use ($val, $destination_path) {
                         $mail->from(config('app.NO_REPLY_EMAIL'), config('app.name'));
                         $mail->attach($destination_path);
-                        // $mail->bcc(['it-dba01@lippoinsurance.com', 'it-dba07@lippoinsurance.com']);
-                        // $mail->to($val->collection_email->pic_emailed_by_finance);
-                        $mail->to('it-dba01@lippoinsurance.com');
+                        $mail->to($val->collection_email->pic_emailed_by_finance);
                         $mail->cc($this->CollectionEmailInternal);
-                        $mail->bcc('it-dba07@lippoinsurance.com');
+                        $mail->bcc(['it-dba01@lippoinsurance.com', 'it-dba07@lippoinsurance.com']);
+
+                        // $mail->to('it-dba01@lippoinsurance.com');
+                        // $mail->cc($this->CollectionEmailInternal);
+                        // $mail->bcc('it-dba07@lippoinsurance.com');
                         $mail->subject('SOA Lippo General Insurance Broker '.$val->collection_email->broker_name);
                     }
                 ); 
