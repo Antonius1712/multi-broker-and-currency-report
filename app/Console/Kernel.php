@@ -15,11 +15,13 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // TESTING.
-        $schedule->command('generate:monthly-report')->monthlyOn(4, '16:45');
-        $schedule->command('send:monthly-report-broker')->monthlyOn(6, '05:00');
-        $schedule->command('send:monthly-report-internal')->monthlyOn(4, '17:00');
+        $schedule->command('generate:monthly-report')->monthlyOn(4, '01:00');
+        $schedule->command('send:monthly-report-internal')->monthlyOn(4, '05:00');
 
+        $schedule->command('send:monthly-report-broker')->monthlyOn(5, '05:00');
+
+
+        // !TESTING.
         // $schedule->command('generate:monthly-report')->monthlyOn(4, '01:00');
         // $schedule->command('send:monthly-report-broker')->monthlyOn(4, '05:00');
         // $schedule->command('send:monthly-report-internal')->monthlyOn(5, '05:00');
