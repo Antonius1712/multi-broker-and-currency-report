@@ -103,7 +103,7 @@ class SendReport extends Command
                         $mail->bcc(['it-dba01@lippoinsurance.com', 'it-dba07@lippoinsurance.com']);
 
                         // $mail->to('it-dba01@lippoinsurance.com');
-                        // $mail->cc($this->CollectionEmailInternal);
+                        // $mail->cc($this->CogllectionEmailInternal);
                         // $mail->bcc('it-dba07@lippoinsurance.com');
                         
                         $mail->subject('SOA Lippo General Insurance Broker '.$val->collection_email->broker_name);

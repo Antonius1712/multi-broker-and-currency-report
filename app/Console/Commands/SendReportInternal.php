@@ -78,7 +78,7 @@ class SendReportInternal extends Command
         $PARAM = '';
         foreach( $this->DataLogSendingcollectionInternalThisMonth as $val ){
             $emailTemplate = 'email.sent-monthly-report-internal';
-            $destination_path = storage_path('app/public/report/monthly_report/zipped/Monthly_Report_Broker_'.date('Y', strtotime(now())).'_'.date('M', strtotime(now())).'.zip');
+            $destination_path = storage_path('app/public/report/monthly_report/zipped/Monthly_Report_Broker_'.date('Y', strtotime(now())).'_'.date('M', strtotime(now()->firstOfMonth()->subDays(1))).'.zip');
 
             $PARAM = [
                 'body' => $val->email_body,
