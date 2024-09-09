@@ -36,7 +36,7 @@ The LGI Collection application simplifies the monthly reporting process by autom
 ### Steps
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/Antonius1712/LGI-COLLECTION.git
+   git clone https://github.com/Antonius1712/multi-broker-and-currency-report.git
    cd lgi-collection
    ```
 2. **Install backend dependencies**:
